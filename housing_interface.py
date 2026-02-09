@@ -5,8 +5,8 @@ import numpy as np
 # -------------------------------
 # Load model and encoders
 # -------------------------------
-model = joblib.load("housing_model.joblib")
-label_encoders = joblib.load("label_encoders.joblib")
+model = joblib.load("house model.pkl")
+label_encoders = joblib.load("label_encoders.pkl")
 
 # -------------------------------
 # Page config
