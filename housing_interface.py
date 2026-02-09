@@ -5,8 +5,13 @@ import numpy as np
 # -------------------------------
 # Load model and encoders
 # -------------------------------
-model = pickle.load(open("house model.pkl", "rb"))
-label_encoders = pickle.load(open("label_encoders.pkl", "rb"))
+try:
+    model = pickle.load(open("house model.pkl", "rb"))
+    label_encoders = pickle.load(open("label_encoders.pkl", "rb"))
+except FileNotFoundError as e:
+    st.error(
+        f"❌ Error: Missing required files!\n\n{str(e)}\n\nPlease ensure both 'house model.pkl' and 'label_encoders.pkl' are in the same directory as this script.")
+    st.stop()
 
 # -------------------------------
 # Page config
