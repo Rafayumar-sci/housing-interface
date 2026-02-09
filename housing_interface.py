@@ -1,12 +1,12 @@
 import streamlit as st
-import joblib
+import pickle
 import numpy as np
 
 # -------------------------------
 # Load model and encoders
 # -------------------------------
-model = joblib.load("house model.pkl")
-label_encoders = joblib.load("label_encoders.pkl")
+model = pickle.load(open("house model.pkl", "rb"))
+label_encoders = pickle.load(open("label_encoders.pkl", "rb"))
 
 # -------------------------------
 # Page config
