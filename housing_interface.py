@@ -35,13 +35,30 @@ if "next_id" not in st.session_state:
     st.session_state.next_id = 1
 
 
-# Small CSS to make the app look cleaner
+# Small CSS to make the app look cleaner and ensure readable colors
 st.markdown(
     """
     <style>
-    .stApp { background: linear-gradient(180deg,#f8fafc,#e8eef7); }
-    .card { padding: 12px; border-radius: 10px; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-    .big-button { font-size: 16px; padding: 8px 18px; }
+    /* page backgrounds and primary text color */
+    html, body, .stApp, .block-container, .main {
+        background: linear-gradient(180deg,#f8fafc,#e8eef7) !important;
+        color: #0f172a !important;
+    }
+    /* make all streamlit text inherit the readable color */
+    .stApp * { color: inherit !important; }
+
+    /* card styling */
+    .card {
+        padding: 12px;
+        border-radius: 10px;
+        background: #ffffff;
+        color: #0f172a !important;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    /* buttons and inputs */
+    button, .stButton button, .stDownloadButton button { color: #0f172a !important; }
+
     </style>
     """,
     unsafe_allow_html=True,
