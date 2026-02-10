@@ -59,6 +59,15 @@ st.markdown(
     /* buttons and inputs */
     button, .stButton button, .stDownloadButton button { color: #0f172a !important; }
 
+    /* input, select and textarea readability */
+    input, textarea, select, input[type="number"], input[type="text"] {
+        color: #0f172a !important;
+        background-color: #ffffff !important;
+        border-color: rgba(15,23,42,0.12) !important;
+    }
+    /* ensure placeholders remain visible */
+    ::placeholder { color: #6b7280 !important; opacity: 1 !important; }
+
     /* Sidebar specific fixes: ensure readable background, text and icon colors */
     section[data-testid="stSidebar"] {
         background: linear-gradient(180deg,#eef2f7,#e0e7ef) !important;
