@@ -59,6 +59,15 @@ st.markdown(
     /* buttons and inputs */
     button, .stButton button, .stDownloadButton button { color: #0f172a !important; }
 
+    /* Sidebar specific fixes: ensure readable background, text and icon colors */
+    section[data-testid="stSidebar"] {
+        background: linear-gradient(180deg,#eef2f7,#e0e7ef) !important;
+        color: #0f172a !important;
+    }
+    section[data-testid="stSidebar"] * { color: inherit !important; }
+    section[data-testid="stSidebar"] svg { fill: #0f172a !important; }
+    section[data-testid="stSidebar"] .css-1d391kg, section[data-testid="stSidebar"] .stMarkdown, section[data-testid="stSidebar"] .stText { color: inherit !important; }
+
     </style>
     """,
     unsafe_allow_html=True,
