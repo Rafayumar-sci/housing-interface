@@ -1,13 +1,19 @@
 import streamlit as st
 import pickle
 import numpy as np
+import os
 
 # -------------------------------
 # Load model and encoders
 # -------------------------------
 try:
-    model = pickle.load(open("house model.pkl", "rb"))
-    label_encoders = pickle.load(open("label_encoders.pkl", "rb"))
+    # Get the directory where this script is located
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    model_path = os.path.join(script_dir, "house model.pkl")
+    encoders_path = os.path.join(script_dir, "label_encoders.pkl")
+
+    model = pickle.load(open(model_path, "rb"))
+    label_encoders = pickle.load(open(encoders_path, "rb"))
 except FileNotFoundError as e:
     st.error(
         f"❌ Error: Missing required files!\n\n{str(e)}\n\nPlease ensure both 'house model.pkl' and 'label_encoders.pkl' are in the same directory as this script.")
