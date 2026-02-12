@@ -105,3 +105,62 @@ if page == "About":
     st.title("About this App")
     st.markdown(
         "This is a lightweight house-price prediction demo. It uses a pre-trained model and label encoders stored alongside this script.\n\nFeatures added: cleaner layout, sidebar navigation, prediction history, filtering and CSV export, and nicer visuals — all without installing extra packages.")
+st.markdown("""
+<style>
+.main {
+    background-color: #F8FAFC;
+}
+
+.block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+div[data-testid="stForm"] {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<style>
+div[data-baseweb="select"] > div {
+    background-color: white !important;
+    color: #1E293B !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+
+st.markdown("""
+<style>
+.stButton > button {
+    background-color: #2563EB;
+    color: white;
+    border-radius: 12px;
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+    border: none;
+}
+.stButton > button:hover {
+    background-color: #1D4ED8;
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown(f"""
+<div style="
+    background-color:#ECFDF5;
+    padding:1.5rem;
+    border-radius:16px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.05);
+    text-align:center;
+    font-size:24px;
+    font-weight:600;
+">
+💰 Estimated Price: ${prediction:,.2f}
+</div>
+""", unsafe_allow_html=True)
